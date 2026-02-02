@@ -20,11 +20,19 @@ def tampilkan_dashboard_utama(df_inflasi):
         ui.request_navigation(page_label, key="app_page")
 
     # Load data BI dan Kurs
-    with st.spinner("Memuat data BI..."):
-        df_bi = fetch_bi_7day_rr_df()
+    try:
+        import bi_data
+        with st.spinner("Memuat data BI..."):
+            df_bi = bi_data.baca_data_bi()
+    except Exception:
+        df_bi = None
     
-    with st.spinner("Memuat data Kurs..."):
-        df_kurs = fetch_kurs_jisdor_df()
+    try:
+        import kurs_data
+        with st.spinner("Memuat data Kurs..."):
+            df_kurs = kurs_data.baca_data_kurs()
+    except Exception:
+        df_kurs = None
     
     data_ready_inflasi = df_inflasi is not None and not df_inflasi.empty
     data_ready_bi = df_bi is not None and not df_bi.empty
@@ -34,7 +42,7 @@ def tampilkan_dashboard_utama(df_inflasi):
         ui.empty_data_state(
             "Data belum tersedia.",
             checks=[
-                "File Excel tersedia di folder `supabase/`",
+                "File CSV tersedia di folder `data_dummy/`",
                 "Atau Supabase sudah dikonfigurasi",
             ],
         )
@@ -228,25 +236,6 @@ def tampilkan_dashboard_utama(df_inflasi):
                 st.error(f"Gagal memuat tabel BI: {e}")
         else:
             st.info("Data BI tidak tersedia")
-    
-    with col3:
-        if data_ready_kurs:
-            st.markdown("**Data Kurs JISDOR Terkini**")
-            try:
-                # Ambil 5 data terbaru
-                df_preview_kurs = df_kurs.tail(5).copy()
-                df_preview_kurs['Tanggal'] = df_preview_kurs['Tanggal'].dt.strftime('%d %b %Y')
-                df_preview_kurs['Kurs'] = df_preview_kurs['Kurs'].apply(lambda x: f"Rp {x:,.0f}")
-                
-                st.dataframe(
-                    df_preview_kurs[['Tanggal', 'Kurs']],
-                    use_container_width=True,
-                    hide_index=True
-                )
-            except Exception as e:
-                st.error(f"Gagal memuat tabel kurs: {e}")
-        else:
-            st.info("Data kurs tidak tersedia")
     
     with col3:
         if data_ready_kurs:

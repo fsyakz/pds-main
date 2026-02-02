@@ -55,10 +55,13 @@ def main():
         st.session_state["app_page"] = "Dashboard Utama"
     
     # Deep-link: izinkan URL mengatur halaman yang aktif (sekali per session)
-    ui.sync_state_from_url(
-        "app",
-        keys=["app_page"],
-    )
+    try:
+        ui.sync_state_from_url(
+            "app",
+            keys=["app_page"],
+        )
+    except Exception:
+        pass
 
     # Theme: gunakan fitur bawaan Streamlit (Choose app theme).
     # CSS di project ini dibuat netral (tidak memaksa dark/light lewat session_state).
