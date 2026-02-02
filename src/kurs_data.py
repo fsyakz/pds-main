@@ -83,27 +83,22 @@ def baca_data_kurs():
             os.path.join(os.path.dirname(__file__), 'supabase'),
             'supabase',
             './supabase',
-            'data',
-            './data',
         ]
         
         for data_dir in possible_paths:
-            file_path = os.path.join(data_dir, 'Kurs_Jisdor.xlsx')
+            file_path = os.path.join(data_dir, 'kurs_jisdor.csv')
             if os.path.exists(file_path):
                 print(f"Loading Kurs data from: {file_path}")
                 break
         else:
-            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'Kurs_Jisdor.xlsx')
+            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'kurs_jisdor.csv')
         
-        df = pd.read_excel(file_path, skiprows=3)
+        df = pd.read_csv(file_path)
         
-        if len(df.columns) >= 3:
-            df.columns = ['NO', 'Tanggal', 'Kurs']
-            
-            df = df[df['NO'].astype(str).str.strip().str.lower() != 'no'].copy()
+        if len(df.columns) >= 2:
+            df.columns = ['Tanggal', 'Kurs']
 
-            df['Tanggal'] = df['Tanggal'].apply(_parse_tanggal_indonesia)
-            df['Kurs'] = df['Kurs'].apply(_parse_rate_percent)
+            df['Tanggal'] = pd.to_datetime(df['Tanggal'], errors='coerce')
             df['Kurs'] = pd.to_numeric(df['Kurs'], errors='coerce')
             
             df = df.dropna(subset=['Tanggal', 'Kurs'])

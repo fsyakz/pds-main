@@ -248,8 +248,46 @@ def _parse_inflasi_excel_file(path: str) -> pd.DataFrame:
         return _empty_inflasi_df()
 
 
+def _parse_inflasi_csv_file(path: str) -> pd.DataFrame:
+    """Load `inflasi_YYYY.csv` -> schema standar."""
+    try:
+        df = pd.read_csv(path)
+        if df.empty:
+            return _empty_inflasi_df()
+        
+        # Rename columns to standard format
+        df.columns = ['Provinsi', 'Tahun', 'Bulan', 'Inflasi (%)']
+        
+        # Normalize province names
+        df["Provinsi"] = df["Provinsi"].str.title()
+        
+        # Fix specific province names
+        province_mapping = {
+            "Di Yogyakarta": "DI Yogyakarta",
+            "Dki Jakarta": "DKI Jakarta",
+            "Kep. Bangka Belitung": "Bangka Belitung",
+            "Kep. Riau": "Kepulauan Riau",
+        }
+        
+        df["Provinsi"] = df["Provinsi"].replace(province_mapping)
+        
+        # Coerce data types
+        df["Provinsi"] = df["Provinsi"].astype(str)
+        df["Tahun"] = pd.to_numeric(df["Tahun"], errors="coerce")
+        df["Bulan"] = pd.to_numeric(df["Bulan"], errors="coerce")
+        df["Inflasi (%)"] = pd.to_numeric(df["Inflasi (%)"], errors="coerce")
+        
+        df = df.dropna(subset=["Provinsi", "Tahun", "Bulan", "Inflasi (%)"])
+        df["Tahun"] = df["Tahun"].astype(int)
+        df["Bulan"] = df["Bulan"].astype(int)
+        
+        return df
+    except Exception:
+        return _empty_inflasi_df()
+
+
 def baca_data_inflasi_excel() -> pd.DataFrame:
-    """Load semua data inflasi dari file Excel di folder supabase/, lalu gabungkan.
+    """Load semua data inflasi dari file CSV di folder supabase/, lalu gabungkan.
 
     Mengembalikan DataFrame schema standar.
     """
@@ -259,13 +297,11 @@ def baca_data_inflasi_excel() -> pd.DataFrame:
         os.path.join(os.path.dirname(__file__), 'supabase'),  # src/ -> supabase
         'supabase',  # root
         './supabase',  # current dir
-        'data',  # fallback to data
-        './data',  # current dir
     ]
     
     file_names = [
-        "Inflasi_Tahunan_2024.xlsx",
-        "Inflasi_Tahunan_2025.xlsx",
+        "inflasi_2024.csv",
+        "inflasi_2025.csv",
     ]
 
     frames: list[pd.DataFrame] = []
@@ -277,7 +313,7 @@ def baca_data_inflasi_excel() -> pd.DataFrame:
         for file_name in file_names:
             file_path = os.path.join(data_dir, file_name)
             if os.path.exists(file_path):
-                df = _parse_inflasi_excel_file(file_path)
+                df = _parse_inflasi_csv_file(file_path)
                 if df is not None and not df.empty:
                     frames.append(df)
                     print(f"Loaded inflasi data from: {file_path}")

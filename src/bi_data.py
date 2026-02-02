@@ -77,11 +77,7 @@ def _parse_rate_percent(value: Any) -> float | None:
         return None
 
 def baca_data_bi():
-    """
-    Membaca data BI-7Day-RR dari file Excel
-    """
     try:
-        # 0) Coba ambil dari Supabase
         try:
             if supabase_client is not None:
                 df_sb = supabase_client.fetch_bi_7day_rr_df()
@@ -90,74 +86,39 @@ def baca_data_bi():
         except Exception:
             pass
 
-        # Coba path yang berbeda untuk deploy
         possible_paths = [
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),  # src/ -> supabase
-            os.path.join(os.path.dirname(__file__), 'supabase'),  # src/ -> supabase
-            'supabase',  # root
-            './supabase',  # current dir
-            'data',  # fallback to data
-            './data',  # current dir
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),
+            os.path.join(os.path.dirname(__file__), 'supabase'),
+            'supabase',
+            './supabase',
         ]
         
         for data_dir in possible_paths:
-            file_path = os.path.join(data_dir, 'BI-7Day-RR.xlsx')
+            file_path = os.path.join(data_dir, 'bi_7day_rr.csv')
             if os.path.exists(file_path):
                 print(f"Loading BI data from: {file_path}")
                 break
         else:
-            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'BI-7Day-RR.xlsx')
+            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'bi_7day_rr.csv')
         
-        # Baca file Excel dengan skip rows untuk header
-        df = pd.read_excel(file_path, skiprows=3)
+        df = pd.read_csv(file_path)
         
-        # Rename kolom berdasarkan struktur yang terlihat
-        if len(df.columns) >= 4:
-            df.columns = ['NO', 'Tanggal', 'BI-7Day-RR', 'Extra']
-            
-            # Hapus kolom extra yang tidak perlu
-            if 'Extra' in df.columns:
-                df = df.drop('Extra', axis=1)
-            
-            # Buang baris header yang ikut terbaca sebagai data
-            df = df[df['NO'].astype(str).str.strip().str.lower() != 'no'].copy()
+        if len(df.columns) >= 2:
+            df.columns = ['Tanggal', 'BI-7Day-RR']
 
-            # Parse tanggal bahasa Indonesia dan rate dengan simbol persen
-            df['Tanggal'] = df['Tanggal'].apply(_parse_tanggal_indonesia)  # type: ignore[call-arg]
-            df['BI-7Day-RR'] = df['BI-7Day-RR'].apply(_parse_rate_percent)  # type: ignore[call-arg]
+            df['Tanggal'] = pd.to_datetime(df['Tanggal'], errors='coerce')
             df['BI-7Day-RR'] = pd.to_numeric(df['BI-7Day-RR'], errors='coerce')
             
-            # Hapus baris dengan NaN
-            df = df.dropna(subset=['Tanggal', 'BI-7Day-RR'])  # type: ignore[call-arg]
+            df = df.dropna(subset=['Tanggal', 'BI-7Day-RR'])
             
-            # Reset index
-            df = df.reset_index(drop=True)
-            
-            return df
-        elif len(df.columns) == 3:
-            df.columns = ['NO', 'Tanggal', 'BI-7Day-RR']
-
-            # Buang baris header yang ikut terbaca sebagai data
-            df = df[df['NO'].astype(str).str.strip().str.lower() != 'no'].copy()
-
-            # Parse tanggal bahasa Indonesia dan rate dengan simbol persen
-            df['Tanggal'] = df['Tanggal'].apply(_parse_tanggal_indonesia)  # type: ignore[call-arg]
-            df['BI-7Day-RR'] = df['BI-7Day-RR'].apply(_parse_rate_percent)  # type: ignore[call-arg]
-            df['BI-7Day-RR'] = pd.to_numeric(df['BI-7Day-RR'], errors='coerce')
-            
-            # Hapus baris dengan NaN
-            df = df.dropna(subset=['Tanggal', 'BI-7Day-RR'])  # type: ignore[call-arg]
-            
-            # Reset index
             df = df.reset_index(drop=True)
             
             return df
         else:
-            return None
+            return pd.DataFrame(columns=['Tanggal', 'BI-7Day-RR'])
             
-    except Exception as e:
-        # Return None untuk error handling di main function
-        return None
+    except Exception:
+        return pd.DataFrame(columns=['Tanggal', 'BI-7Day-RR'])
 
 def tampilkan_bi_data():
     """
