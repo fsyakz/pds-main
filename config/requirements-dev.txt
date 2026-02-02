@@ -1,4 +1,0 @@
-# Development-only dependencies
-# Install with: pip install -r config/requirements-dev.txt
-
-ruff>=0.6.0
