@@ -84,7 +84,23 @@ def baca_data_kurs():
         except Exception:
             pass
 
-        file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'Kurs_Jisdor.xlsx')
+        # Coba path yang berbeda untuk deploy
+        possible_paths = [
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),  # src/ -> supabase
+            os.path.join(os.path.dirname(__file__), 'supabase'),  # src/ -> supabase
+            'supabase',  # root
+            './supabase',  # current dir
+            'data',  # fallback to data
+            './data',  # current dir
+        ]
+        
+        for data_dir in possible_paths:
+            file_path = os.path.join(data_dir, 'Kurs_Jisdor.xlsx')
+            if os.path.exists(file_path):
+                print(f"Loading Kurs data from: {file_path}")
+                break
+        else:
+            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'Kurs_Jisdor.xlsx')
         
         # Baca file Excel dengan skip rows untuk header
         df = pd.read_excel(file_path, skiprows=3)

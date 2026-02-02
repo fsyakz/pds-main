@@ -253,19 +253,38 @@ def baca_data_inflasi_excel() -> pd.DataFrame:
 
     Mengembalikan DataFrame schema standar.
     """
-    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase')
-    file_paths = [
-        os.path.join(data_dir, "Inflasi_Tahunan_2024.xlsx"),
-        os.path.join(data_dir, "Inflasi_Tahunan_2025.xlsx"),
+    # Coba path yang berbeda untuk deploy
+    possible_paths = [
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),  # src/ -> supabase
+        os.path.join(os.path.dirname(__file__), 'supabase'),  # src/ -> supabase
+        'supabase',  # root
+        './supabase',  # current dir
+        'data',  # fallback to data
+        './data',  # current dir
+    ]
+    
+    file_names = [
+        "Inflasi_Tahunan_2024.xlsx",
+        "Inflasi_Tahunan_2025.xlsx",
     ]
 
     frames: list[pd.DataFrame] = []
-    for path in file_paths:
-        if not os.path.exists(path):
+    
+    for data_dir in possible_paths:
+        if not os.path.exists(data_dir):
             continue
-        df = _parse_inflasi_excel_file(path)
-        if df is not None and not df.empty:
-            frames.append(df)
+            
+        for file_name in file_names:
+            file_path = os.path.join(data_dir, file_name)
+            if os.path.exists(file_path):
+                df = _parse_inflasi_excel_file(file_path)
+                if df is not None and not df.empty:
+                    frames.append(df)
+                    print(f"Loaded inflasi data from: {file_path}")
+        
+        # Jika sudah dapat data, stop mencari
+        if frames:
+            break
 
     if not frames:
         out = _empty_inflasi_df()

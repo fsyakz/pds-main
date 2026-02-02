@@ -52,7 +52,7 @@ def get_supabase_client():
     url = _get_config_value("SUPABASE_URL")
     key = _get_config_value("SUPABASE_ANON_KEY")
     if not url or not key:
-        # Load .env file dari root project
+        # Load .env file dari root project - coba beberapa path untuk deploy
         try:
             from dotenv import load_dotenv
             from pathlib import Path
@@ -61,6 +61,7 @@ def get_supabase_client():
                 Path(__file__).resolve().parents[1] / ".env",  # src/. -> .env
                 Path(".env"),  # Current working directory
                 Path(__file__).resolve().parent.parent / ".env",  # src/ -> .env
+                Path(__file__).resolve().parents[2] / ".env",  # src/ -> ../.env
             ]
             
             for path in paths_to_try:
@@ -72,6 +73,8 @@ def get_supabase_client():
                 print("No .env file found")
         except Exception as e:
             print(f"Failed to load .env: {e}")
+        
+        # Coba lagi setelah load .env
         url = _get_config_value("SUPABASE_URL")
         key = _get_config_value("SUPABASE_ANON_KEY")
         if not url or not key:
