@@ -1,0 +1,8 @@
+{
+  "last_updated": "2026-02-01T00:29:17.014174",
+  "total_records": 545,
+  "date_range": "2024-01-01 - 2026-01-30",
+  "source": "https://www.bi.go.id/id/kurs/transaksi-bi.aspx",
+  "last_copied": "2026-02-02T15:24:00.647983",
+  "target_file": "/Users/muhfasyaalghoniyyu/Downloads/pds-main/supabase/Kurs_Jisdor.xlsx"
+}

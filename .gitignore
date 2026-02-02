@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Streamlit
+.streamlit/
+
+# Local env / secrets
+.env
+
+# Ignore common env variants, but keep the example file tracked
+.env.*
+!.env.example
+
+# VS Code
+.vscode/
+
+# Local backups
+sync_backup/
+
+# OS
+.DS_Store
+Thumbs.db
+
