@@ -123,20 +123,20 @@ def tampilkan_dashboard_utama(df_inflasi):
     
     with col1:
         if data_ready_inflasi:
-            st.markdown("**Tren Inflasi Terkini**")
+            st.markdown("**Tren Inflasi**")
             try:
-                # Ambil data 6 bulan terakhir
-                df_recent = df_all.tail(6 * 37)  # 6 bulan * 37 provinsi
-                if not df_recent.empty:
-                    fig = px.line(
-                        df_recent.groupby('Tanggal')['Inflasi (%)'].mean().reset_index(),
-                        x='Tanggal',
-                        y='Inflasi (%)',
-                        title='Rata-rata Inflasi Nasional',
-                        markers=True
-                    )
-                    fig.update_layout(height=250)
-                    st.plotly_chart(fig, use_container_width=True)
+                # Ambil 30 hari terakhir
+                df_latest = df_all.tail(30).copy()
+                fig = px.line(
+                    df_latest, 
+                    x='Tanggal', 
+                    y='Inflasi (%)',
+                    title='Inflasi (30 hari terakhir)',
+                    labels={'Inflasi (%)': 'Inflasi (%)', 'Tanggal': 'Tanggal'},
+                    template='plotly_white'
+                )
+                fig.update_layout(height=250)
+                st.plotly_chart(fig, use_container_width=True)
             except Exception as e:
                 st.error(f"Gagal memuat grafik inflasi: {e}")
         else:
@@ -146,18 +146,18 @@ def tampilkan_dashboard_utama(df_inflasi):
         if data_ready_bi:
             st.markdown("**Tren BI-7Day-RR**")
             try:
-                # Ambil 30 data terakhir
-                df_bi_recent = df_bi.tail(30)
-                if not df_bi_recent.empty:
-                    fig = px.line(
-                        df_bi_recent,
-                        x='Tanggal',
-                        y='BI-7Day-RR',
-                        title='BI-7Day-RR (30 hari terakhir)',
-                        markers=True
-                    )
-                    fig.update_layout(height=250)
-                    st.plotly_chart(fig, use_container_width=True)
+                # Ambil 30 hari terakhir
+                df_bi_latest = df_bi.tail(30).copy()
+                fig = px.line(
+                    df_bi_latest, 
+                    x='Tanggal', 
+                    y='BI-7Day-RR',
+                    title='BI-7Day-RR (30 hari terakhir)',
+                    labels={'BI-7Day-RR': 'BI-7Day-RR (%)', 'Tanggal': 'Tanggal'},
+                    template='plotly_white'
+                )
+                fig.update_layout(height=250)
+                st.plotly_chart(fig, use_container_width=True)
             except Exception as e:
                 st.error(f"Gagal memuat grafik BI: {e}")
         else:
@@ -167,18 +167,18 @@ def tampilkan_dashboard_utama(df_inflasi):
         if data_ready_kurs:
             st.markdown("**Tren Kurs JISDOR**")
             try:
-                # Ambil 30 data terakhir
-                df_kurs_recent = df_kurs.tail(30)
-                if not df_kurs_recent.empty:
-                    fig = px.line(
-                        df_kurs_recent,
-                        x='Tanggal',
-                        y='Kurs',
-                        title='Kurs JISDOR (30 hari terakhir)',
-                        markers=True
-                    )
-                    fig.update_layout(height=250)
-                    st.plotly_chart(fig, use_container_width=True)
+                # Ambil 30 hari terakhir
+                df_kurs_latest = df_kurs.tail(30).copy()
+                fig = px.line(
+                    df_kurs_latest, 
+                    x='Tanggal', 
+                    y='Kurs',
+                    title='Kurs JISDOR (30 hari terakhir)',
+                    labels={'Kurs': 'Kurs (IDR/USD)', 'Tanggal': 'Tanggal'},
+                    template='plotly_white'
+                )
+                fig.update_layout(height=250)
+                st.plotly_chart(fig, use_container_width=True)
             except Exception as e:
                 st.error(f"Gagal memuat grafik kurs: {e}")
         else:
@@ -228,6 +228,25 @@ def tampilkan_dashboard_utama(df_inflasi):
                 st.error(f"Gagal memuat tabel BI: {e}")
         else:
             st.info("Data BI tidak tersedia")
+    
+    with col3:
+        if data_ready_kurs:
+            st.markdown("**Data Kurs JISDOR Terkini**")
+            try:
+                # Ambil 5 data terbaru
+                df_preview_kurs = df_kurs.tail(5).copy()
+                df_preview_kurs['Tanggal'] = df_preview_kurs['Tanggal'].dt.strftime('%d %b %Y')
+                df_preview_kurs['Kurs'] = df_preview_kurs['Kurs'].apply(lambda x: f"Rp {x:,.0f}")
+                
+                st.dataframe(
+                    df_preview_kurs[['Tanggal', 'Kurs']],
+                    use_container_width=True,
+                    hide_index=True
+                )
+            except Exception as e:
+                st.error(f"Gagal memuat tabel kurs: {e}")
+        else:
+            st.info("Data kurs tidak tersedia")
     
     with col3:
         if data_ready_kurs:

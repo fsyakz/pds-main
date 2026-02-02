@@ -87,10 +87,10 @@ def baca_data_bi():
             pass
 
         possible_paths = [
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),
-            os.path.join(os.path.dirname(__file__), 'supabase'),
-            'supabase',
-            './supabase',
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy'),
+            os.path.join(os.path.dirname(__file__), 'data_dummy'),
+            'data_dummy',
+            './data_dummy',
         ]
         
         for data_dir in possible_paths:
@@ -99,7 +99,7 @@ def baca_data_bi():
                 print(f"Loading BI data from: {file_path}")
                 break
         else:
-            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase', 'bi_7day_rr.csv')
+            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy', 'bi_7day_rr.csv')
         
         df = pd.read_csv(file_path)
         

@@ -287,16 +287,16 @@ def _parse_inflasi_csv_file(path: str) -> pd.DataFrame:
 
 
 def baca_data_inflasi_excel() -> pd.DataFrame:
-    """Load semua data inflasi dari file CSV di folder supabase/, lalu gabungkan.
+    """Load semua data inflasi dari file CSV di folder data_dummy/, lalu gabungkan.
 
     Mengembalikan DataFrame schema standar.
     """
     # Coba path yang berbeda untuk deploy
     possible_paths = [
-        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'supabase'),  # src/ -> supabase
-        os.path.join(os.path.dirname(__file__), 'supabase'),  # src/ -> supabase
-        'supabase',  # root
-        './supabase',  # current dir
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy'),  # src/ -> data_dummy
+        os.path.join(os.path.dirname(__file__), 'data_dummy'),  # src/ -> data_dummy
+        'data_dummy',  # root
+        './data_dummy',  # current dir
     ]
     
     file_names = [

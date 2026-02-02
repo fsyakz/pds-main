@@ -1,0 +1,409 @@
+provinsi,tahun,bulan,inflasi
+Aceh,2025,1,3.37
+Aceh,2025,2,2.98
+Aceh,2025,3,3.12
+Aceh,2025,4,2.72
+Aceh,2025,5,3.03
+Aceh,2025,6,2.82
+Aceh,2025,7,2.84
+Aceh,2025,8,2.48
+Aceh,2025,9,2.73
+Aceh,2025,10,3.06
+Aceh,2025,11,2.69
+Aceh,2025,12,2.99
+Sumatera Utara,2025,1,2.83
+Sumatera Utara,2025,2,3.07
+Sumatera Utara,2025,3,2.5
+Sumatera Utara,2025,4,2.74
+Sumatera Utara,2025,5,2.84
+Sumatera Utara,2025,6,2.6
+Sumatera Utara,2025,7,2.54
+Sumatera Utara,2025,8,2.46
+Sumatera Utara,2025,9,2.59
+Sumatera Utara,2025,10,2.59
+Sumatera Utara,2025,11,2.45
+Sumatera Utara,2025,12,3.14
+Sumatera Barat,2025,1,2.74
+Sumatera Barat,2025,2,2.85
+Sumatera Barat,2025,3,2.34
+Sumatera Barat,2025,4,2.41
+Sumatera Barat,2025,5,2.29
+Sumatera Barat,2025,6,2.12
+Sumatera Barat,2025,7,2.38
+Sumatera Barat,2025,8,1.96
+Sumatera Barat,2025,9,2.43
+Sumatera Barat,2025,10,2.62
+Sumatera Barat,2025,11,2.23
+Sumatera Barat,2025,12,2.57
+Riau,2025,1,2.61
+Riau,2025,2,2.5
+Riau,2025,3,2.0
+Riau,2025,4,2.4
+Riau,2025,5,2.19
+Riau,2025,6,1.77
+Riau,2025,7,1.84
+Riau,2025,8,1.92
+Riau,2025,9,2.41
+Riau,2025,10,2.24
+Riau,2025,11,2.24
+Riau,2025,12,2.73
+Jambi,2025,1,2.91
+Jambi,2025,2,2.58
+Jambi,2025,3,2.56
+Jambi,2025,4,2.26
+Jambi,2025,5,2.32
+Jambi,2025,6,2.11
+Jambi,2025,7,2.08
+Jambi,2025,8,2.39
+Jambi,2025,9,2.7
+Jambi,2025,10,2.59
+Jambi,2025,11,2.49
+Jambi,2025,12,2.79
+Sumatera Selatan,2025,1,3.06
+Sumatera Selatan,2025,2,3.15
+Sumatera Selatan,2025,3,2.72
+Sumatera Selatan,2025,4,2.57
+Sumatera Selatan,2025,5,2.48
+Sumatera Selatan,2025,6,2.56
+Sumatera Selatan,2025,7,2.69
+Sumatera Selatan,2025,8,2.29
+Sumatera Selatan,2025,9,2.56
+Sumatera Selatan,2025,10,2.91
+Sumatera Selatan,2025,11,2.85
+Sumatera Selatan,2025,12,2.94
+Bengkulu,2025,1,3.16
+Bengkulu,2025,2,2.89
+Bengkulu,2025,3,2.76
+Bengkulu,2025,4,3.02
+Bengkulu,2025,5,2.96
+Bengkulu,2025,6,2.65
+Bengkulu,2025,7,2.61
+Bengkulu,2025,8,2.44
+Bengkulu,2025,9,2.95
+Bengkulu,2025,10,3.03
+Bengkulu,2025,11,2.94
+Bengkulu,2025,12,2.97
+Lampung,2025,1,2.37
+Lampung,2025,2,2.78
+Lampung,2025,3,2.14
+Lampung,2025,4,2.22
+Lampung,2025,5,2.07
+Lampung,2025,6,2.14
+Lampung,2025,7,1.86
+Lampung,2025,8,2.25
+Lampung,2025,9,2.46
+Lampung,2025,10,2.43
+Lampung,2025,11,2.33
+Lampung,2025,12,2.41
+Kep. Bangka Belitung,2025,1,3.33
+Kep. Bangka Belitung,2025,2,3.27
+Kep. Bangka Belitung,2025,3,3.15
+Kep. Bangka Belitung,2025,4,2.95
+Kep. Bangka Belitung,2025,5,2.86
+Kep. Bangka Belitung,2025,6,3.02
+Kep. Bangka Belitung,2025,7,2.77
+Kep. Bangka Belitung,2025,8,2.97
+Kep. Bangka Belitung,2025,9,3.08
+Kep. Bangka Belitung,2025,10,3.06
+Kep. Bangka Belitung,2025,11,3.09
+Kep. Bangka Belitung,2025,12,3.14
+Kep. Riau,2025,1,2.25
+Kep. Riau,2025,2,2.18
+Kep. Riau,2025,3,1.97
+Kep. Riau,2025,4,2.26
+Kep. Riau,2025,5,1.99
+Kep. Riau,2025,6,1.83
+Kep. Riau,2025,7,1.97
+Kep. Riau,2025,8,1.73
+Kep. Riau,2025,9,1.87
+Kep. Riau,2025,10,2.0
+Kep. Riau,2025,11,1.95
+Kep. Riau,2025,12,2.51
+DKI Jakarta,2025,1,3.59
+DKI Jakarta,2025,2,3.65
+DKI Jakarta,2025,3,2.96
+DKI Jakarta,2025,4,3.24
+DKI Jakarta,2025,5,3.01
+DKI Jakarta,2025,6,2.79
+DKI Jakarta,2025,7,3.0
+DKI Jakarta,2025,8,3.1
+DKI Jakarta,2025,9,3.29
+DKI Jakarta,2025,10,3.03
+DKI Jakarta,2025,11,2.98
+DKI Jakarta,2025,12,3.31
+Jawa Barat,2025,1,3.39
+Jawa Barat,2025,2,3.44
+Jawa Barat,2025,3,2.86
+Jawa Barat,2025,4,2.66
+Jawa Barat,2025,5,2.81
+Jawa Barat,2025,6,2.58
+Jawa Barat,2025,7,2.64
+Jawa Barat,2025,8,2.58
+Jawa Barat,2025,9,3.04
+Jawa Barat,2025,10,3.04
+Jawa Barat,2025,11,3.09
+Jawa Barat,2025,12,3.18
+Jawa Tengah,2025,1,2.91
+Jawa Tengah,2025,2,3.18
+Jawa Tengah,2025,3,2.81
+Jawa Tengah,2025,4,2.55
+Jawa Tengah,2025,5,2.75
+Jawa Tengah,2025,6,2.26
+Jawa Tengah,2025,7,2.54
+Jawa Tengah,2025,8,2.45
+Jawa Tengah,2025,9,2.61
+Jawa Tengah,2025,10,2.85
+Jawa Tengah,2025,11,2.56
+Jawa Tengah,2025,12,3.11
+DI Yogyakarta,2025,1,3.19
+DI Yogyakarta,2025,2,3.29
+DI Yogyakarta,2025,3,2.91
+DI Yogyakarta,2025,4,3.21
+DI Yogyakarta,2025,5,3.1
+DI Yogyakarta,2025,6,2.77
+DI Yogyakarta,2025,7,2.56
+DI Yogyakarta,2025,8,2.73
+DI Yogyakarta,2025,9,3.24
+DI Yogyakarta,2025,10,3.04
+DI Yogyakarta,2025,11,3.0
+DI Yogyakarta,2025,12,3.25
+Jawa Timur,2025,1,2.89
+Jawa Timur,2025,2,3.09
+Jawa Timur,2025,3,2.77
+Jawa Timur,2025,4,2.96
+Jawa Timur,2025,5,2.87
+Jawa Timur,2025,6,2.48
+Jawa Timur,2025,7,2.5
+Jawa Timur,2025,8,2.62
+Jawa Timur,2025,9,2.62
+Jawa Timur,2025,10,2.93
+Jawa Timur,2025,11,2.75
+Jawa Timur,2025,12,3.32
+Banten,2025,1,3.53
+Banten,2025,2,3.64
+Banten,2025,3,3.29
+Banten,2025,4,2.94
+Banten,2025,5,3.08
+Banten,2025,6,2.85
+Banten,2025,7,2.91
+Banten,2025,8,2.92
+Banten,2025,9,3.03
+Banten,2025,10,3.17
+Banten,2025,11,3.3
+Banten,2025,12,3.22
+Bali,2025,1,3.45
+Bali,2025,2,3.78
+Bali,2025,3,3.34
+Bali,2025,4,3.4
+Bali,2025,5,3.41
+Bali,2025,6,3.3
+Bali,2025,7,3.1
+Bali,2025,8,3.05
+Bali,2025,9,3.17
+Bali,2025,10,3.43
+Bali,2025,11,3.22
+Bali,2025,12,3.76
+Nusa Tenggara Barat,2025,1,2.87
+Nusa Tenggara Barat,2025,2,2.69
+Nusa Tenggara Barat,2025,3,2.6
+Nusa Tenggara Barat,2025,4,2.41
+Nusa Tenggara Barat,2025,5,2.32
+Nusa Tenggara Barat,2025,6,2.25
+Nusa Tenggara Barat,2025,7,2.49
+Nusa Tenggara Barat,2025,8,2.42
+Nusa Tenggara Barat,2025,9,2.32
+Nusa Tenggara Barat,2025,10,2.42
+Nusa Tenggara Barat,2025,11,2.26
+Nusa Tenggara Barat,2025,12,2.89
+Nusa Tenggara Timur,2025,1,3.16
+Nusa Tenggara Timur,2025,2,3.2
+Nusa Tenggara Timur,2025,3,2.81
+Nusa Tenggara Timur,2025,4,3.09
+Nusa Tenggara Timur,2025,5,2.73
+Nusa Tenggara Timur,2025,6,2.86
+Nusa Tenggara Timur,2025,7,2.51
+Nusa Tenggara Timur,2025,8,2.55
+Nusa Tenggara Timur,2025,9,3.09
+Nusa Tenggara Timur,2025,10,2.67
+Nusa Tenggara Timur,2025,11,3.05
+Nusa Tenggara Timur,2025,12,3.1
+Kalimantan Barat,2025,1,2.45
+Kalimantan Barat,2025,2,2.6
+Kalimantan Barat,2025,3,2.05
+Kalimantan Barat,2025,4,2.26
+Kalimantan Barat,2025,5,2.2
+Kalimantan Barat,2025,6,1.77
+Kalimantan Barat,2025,7,1.89
+Kalimantan Barat,2025,8,2.18
+Kalimantan Barat,2025,9,2.43
+Kalimantan Barat,2025,10,2.24
+Kalimantan Barat,2025,11,2.31
+Kalimantan Barat,2025,12,2.36
+Kalimantan Tengah,2025,1,2.59
+Kalimantan Tengah,2025,2,2.81
+Kalimantan Tengah,2025,3,2.62
+Kalimantan Tengah,2025,4,2.39
+Kalimantan Tengah,2025,5,2.24
+Kalimantan Tengah,2025,6,2.44
+Kalimantan Tengah,2025,7,2.14
+Kalimantan Tengah,2025,8,2.23
+Kalimantan Tengah,2025,9,2.22
+Kalimantan Tengah,2025,10,2.52
+Kalimantan Tengah,2025,11,2.48
+Kalimantan Tengah,2025,12,2.49
+Kalimantan Selatan,2025,1,2.71
+Kalimantan Selatan,2025,2,2.82
+Kalimantan Selatan,2025,3,2.82
+Kalimantan Selatan,2025,4,2.63
+Kalimantan Selatan,2025,5,2.52
+Kalimantan Selatan,2025,6,2.4
+Kalimantan Selatan,2025,7,2.32
+Kalimantan Selatan,2025,8,2.21
+Kalimantan Selatan,2025,9,2.56
+Kalimantan Selatan,2025,10,2.64
+Kalimantan Selatan,2025,11,2.71
+Kalimantan Selatan,2025,12,3.03
+Kalimantan Timur,2025,1,2.41
+Kalimantan Timur,2025,2,2.59
+Kalimantan Timur,2025,3,2.28
+Kalimantan Timur,2025,4,2.27
+Kalimantan Timur,2025,5,2.26
+Kalimantan Timur,2025,6,2.3
+Kalimantan Timur,2025,7,2.28
+Kalimantan Timur,2025,8,1.97
+Kalimantan Timur,2025,9,2.52
+Kalimantan Timur,2025,10,2.22
+Kalimantan Timur,2025,11,2.39
+Kalimantan Timur,2025,12,2.72
+Kalimantan Utara,2025,1,3.04
+Kalimantan Utara,2025,2,2.91
+Kalimantan Utara,2025,3,2.85
+Kalimantan Utara,2025,4,2.66
+Kalimantan Utara,2025,5,2.82
+Kalimantan Utara,2025,6,2.64
+Kalimantan Utara,2025,7,2.26
+Kalimantan Utara,2025,8,2.43
+Kalimantan Utara,2025,9,2.87
+Kalimantan Utara,2025,10,2.93
+Kalimantan Utara,2025,11,2.66
+Kalimantan Utara,2025,12,3.16
+Sulawesi Utara,2025,1,3.12
+Sulawesi Utara,2025,2,3.02
+Sulawesi Utara,2025,3,2.97
+Sulawesi Utara,2025,4,2.77
+Sulawesi Utara,2025,5,2.85
+Sulawesi Utara,2025,6,2.4
+Sulawesi Utara,2025,7,2.7
+Sulawesi Utara,2025,8,2.58
+Sulawesi Utara,2025,9,2.75
+Sulawesi Utara,2025,10,2.66
+Sulawesi Utara,2025,11,3.02
+Sulawesi Utara,2025,12,3.14
+Sulawesi Tengah,2025,1,2.66
+Sulawesi Tengah,2025,2,2.56
+Sulawesi Tengah,2025,3,2.31
+Sulawesi Tengah,2025,4,2.35
+Sulawesi Tengah,2025,5,2.59
+Sulawesi Tengah,2025,6,2.08
+Sulawesi Tengah,2025,7,2.06
+Sulawesi Tengah,2025,8,2.47
+Sulawesi Tengah,2025,9,2.4
+Sulawesi Tengah,2025,10,2.28
+Sulawesi Tengah,2025,11,2.32
+Sulawesi Tengah,2025,12,2.69
+Sulawesi Selatan,2025,1,3.44
+Sulawesi Selatan,2025,2,3.11
+Sulawesi Selatan,2025,3,2.7
+Sulawesi Selatan,2025,4,2.79
+Sulawesi Selatan,2025,5,2.68
+Sulawesi Selatan,2025,6,2.74
+Sulawesi Selatan,2025,7,2.8
+Sulawesi Selatan,2025,8,2.49
+Sulawesi Selatan,2025,9,2.81
+Sulawesi Selatan,2025,10,2.79
+Sulawesi Selatan,2025,11,3.1
+Sulawesi Selatan,2025,12,3.05
+Sulawesi Tenggara,2025,1,3.13
+Sulawesi Tenggara,2025,2,2.9
+Sulawesi Tenggara,2025,3,2.5
+Sulawesi Tenggara,2025,4,2.72
+Sulawesi Tenggara,2025,5,2.71
+Sulawesi Tenggara,2025,6,2.36
+Sulawesi Tenggara,2025,7,2.33
+Sulawesi Tenggara,2025,8,2.21
+Sulawesi Tenggara,2025,9,2.38
+Sulawesi Tenggara,2025,10,2.59
+Sulawesi Tenggara,2025,11,2.44
+Sulawesi Tenggara,2025,12,3.01
+Gorontalo,2025,1,3.22
+Gorontalo,2025,2,3.25
+Gorontalo,2025,3,3.11
+Gorontalo,2025,4,2.85
+Gorontalo,2025,5,3.11
+Gorontalo,2025,6,2.55
+Gorontalo,2025,7,2.9
+Gorontalo,2025,8,2.92
+Gorontalo,2025,9,3.18
+Gorontalo,2025,10,3.1
+Gorontalo,2025,11,2.89
+Gorontalo,2025,12,3.2
+Sulawesi Barat,2025,1,2.75
+Sulawesi Barat,2025,2,2.9
+Sulawesi Barat,2025,3,2.3
+Sulawesi Barat,2025,4,2.49
+Sulawesi Barat,2025,5,2.33
+Sulawesi Barat,2025,6,2.17
+Sulawesi Barat,2025,7,2.15
+Sulawesi Barat,2025,8,1.97
+Sulawesi Barat,2025,9,2.52
+Sulawesi Barat,2025,10,2.21
+Sulawesi Barat,2025,11,2.24
+Sulawesi Barat,2025,12,2.71
+Maluku,2025,1,3.19
+Maluku,2025,2,3.12
+Maluku,2025,3,2.6
+Maluku,2025,4,2.86
+Maluku,2025,5,2.75
+Maluku,2025,6,2.54
+Maluku,2025,7,2.37
+Maluku,2025,8,2.37
+Maluku,2025,9,2.72
+Maluku,2025,10,2.55
+Maluku,2025,11,2.79
+Maluku,2025,12,2.78
+Maluku Utara,2025,1,3.11
+Maluku Utara,2025,2,3.08
+Maluku Utara,2025,3,2.83
+Maluku Utara,2025,4,3.14
+Maluku Utara,2025,5,2.75
+Maluku Utara,2025,6,2.9
+Maluku Utara,2025,7,2.73
+Maluku Utara,2025,8,2.59
+Maluku Utara,2025,9,2.72
+Maluku Utara,2025,10,2.94
+Maluku Utara,2025,11,2.79
+Maluku Utara,2025,12,3.44
+Papua Barat,2025,1,3.44
+Papua Barat,2025,2,3.61
+Papua Barat,2025,3,3.19
+Papua Barat,2025,4,3.09
+Papua Barat,2025,5,3.05
+Papua Barat,2025,6,2.77
+Papua Barat,2025,7,3.02
+Papua Barat,2025,8,2.76
+Papua Barat,2025,9,3.26
+Papua Barat,2025,10,3.05
+Papua Barat,2025,11,2.99
+Papua Barat,2025,12,3.53
+Papua,2025,1,3.29
+Papua,2025,2,3.72
+Papua,2025,3,3.35
+Papua,2025,4,3.06
+Papua,2025,5,3.43
+Papua,2025,6,2.94
+Papua,2025,7,2.88
+Papua,2025,8,3.22
+Papua,2025,9,3.05
+Papua,2025,10,3.1
+Papua,2025,11,3.07
+Papua,2025,12,3.27
