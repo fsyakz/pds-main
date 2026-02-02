@@ -17,17 +17,21 @@ except Exception:
     pass
 
 # Import modul-modul yang telah dipisah
-import utils
-import styles
-import dashboard_utama
-import visualisasi_inflasi
-import analisa_gis
-import statistik_data
-import database_inflasi
-import kalkulator_mata_uang
-import bi_data
-import kurs_data
-import ui
+try:
+    import utils
+    import styles
+    import dashboard_utama
+    import visualisasi_inflasi
+    import analisa_gis
+    import statistik_data
+    import database_inflasi
+    import kalkulator_mata_uang
+    import bi_data
+    import kurs_data
+    import ui
+except ImportError as e:
+    st.error(f"Error importing modules: {e}")
+    st.stop()
 
 # Konfigurasi halaman
 st.set_page_config(
