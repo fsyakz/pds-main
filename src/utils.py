@@ -293,10 +293,10 @@ def baca_data_inflasi_excel() -> pd.DataFrame:
     """
     # Coba path yang berbeda untuk deploy
     possible_paths = [
-        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy'),  # src/ -> data_dummy
-        os.path.join(os.path.dirname(__file__), 'data_dummy'),  # src/ -> data_dummy
-        'data_dummy',  # root
-        './data_dummy',  # current dir
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'dataset'),  # src/ -> dataset
+        os.path.join(os.path.dirname(__file__), 'dataset'),  # src/ -> dataset
+        'dataset',  # root
+        './dataset',  # current dir
     ]
     
     file_names = [

@@ -42,7 +42,7 @@ def tampilkan_dashboard_utama(df_inflasi):
         ui.empty_data_state(
             "Data belum tersedia.",
             checks=[
-                "File CSV tersedia di folder `data_dummy/`",
+                "File CSV tersedia di folder `dataset/`",
                 "Atau Supabase sudah dikonfigurasi",
             ],
         )

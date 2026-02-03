@@ -79,10 +79,10 @@ def baca_data_kurs():
             pass
 
         possible_paths = [
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy'),
-            os.path.join(os.path.dirname(__file__), 'data_dummy'),
-            'data_dummy',
-            './data_dummy',
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'dataset'),
+            os.path.join(os.path.dirname(__file__), 'dataset'),
+            'dataset',
+            './dataset',
         ]
         
         for data_dir in possible_paths:
@@ -91,7 +91,7 @@ def baca_data_kurs():
                 print(f"Loading Kurs data from: {file_path}")
                 break
         else:
-            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data_dummy', 'kurs_jisdor.csv')
+            file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'dataset', 'kurs_jisdor.csv')
         
         df = pd.read_csv(file_path)
         
